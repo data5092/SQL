@@ -27,4 +27,17 @@ VALUES
     (14, 'Rewards Credit Card', 'Credit Card', 21.99, 0.00, 0.00),
     (15, 'Auto Loan', 'Loan', 4.25, 0.00, 20000.00);
 
+#For this project, I used SQL to query the bank product database to get information about available products with specific characteristics. 
 
+#Use an OR statement to identify products that have either defined characteristic (is either Checking or Savings).
+Select product_name
+FROM bank_products
+WHERE product_type = "Checking"
+OR product_type = "Savings";
+
+#Use an AND statement to identify products that have multiple defined characteristics (is Savings, no monthly fee, interest rate is at least 0.75).
+SELECT product_name
+FROM bank_products
+WHERE product_type = "Savings"
+AND monthly_fee = "0.00"
+AND interest_rate >= 0.75;
